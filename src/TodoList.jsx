@@ -1,4 +1,9 @@
 import { useState, useEffect, useMemo, useCallback } from "react"
+// import Imagem from './assets/todolist.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
 import './TodoList.css'
 
 export default function TodoList() {
@@ -29,6 +34,11 @@ export default function TodoList() {
         if (input.trim() !== '') {
             setTarefas([...tarefas, input]);
             setInput('');
+
+            document.querySelector('.btn-add').classList.add('clicked');
+            setTimeout(() => {
+                document.querySelector('.btn-add').classList.remove('clicked');
+            }, 1000);
         }
     }, [tarefas, input]);
 
@@ -49,22 +59,27 @@ export default function TodoList() {
     }, [tarefas])
 
     return (
-        <div>
-            <h1>To do List</h1>
-            <ul>
-                {tarefas.map((tarefa, index) => (
-                    <li key={index}>{tarefa}
-                        <button
-                            onClick={() => handleDelete(index)}>Excluir
-                        </button>
-                    </li>
-                ))}
-            </ul>
-
-            <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} />
-            <button type="button" onClick={handleAdd}>Adicionar</button>
-            <br />
-            <strong>Você tem {totalTarefas} tarefas!</strong>
+        <div className="container">
+            <div className="content">
+                <h1 className="title">Todo List</h1>
+                <ul className="minhaLista">
+                    {tarefas.map((tarefa, index) => (
+                        <li className="listaItem" key={index}>{tarefa}
+                            <button
+                                className="btn-delete" onClick={() => handleDelete(index)}>
+                                <FontAwesomeIcon icon={faTrashAlt} />
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+                <div className="add">
+                    <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} />
+                    <button type="button" className="btn-add" onClick={handleAdd}>
+                        <FontAwesomeIcon icon={faPlus} />
+                    </button>
+                </div>
+                <strong>Você tem {totalTarefas} tarefas!</strong>
+            </div>
         </div>
     )
 }
