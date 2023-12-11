@@ -1,8 +1,42 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Todo List App
 
-Currently, two official plugins are available:
+Este é um aplicativo simples de lista de tarefas construído com React. Permite que o usuário adicione, exclua e acompanhe suas tarefas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
+
+- Adição de tarefas: Insira uma nova tarefa na lista usando o botão de adição ou pressionando "Enter".
+- Exclusão de tarefas: Remova uma tarefa existente clicando no ícone de lixeira ao lado dela.
+- Armazenamento local: As tarefas são armazenadas localmente no navegador para persistência de dados entre sessões.
+
+## Tecnologias Utilizadas
+
+- React
+- FontAwesome para ícones
+- Estilização com CSS
+
+## Como Usar
+
+1. Clone o repositório:
+
+```bash
+
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+
+## Instale as dependências:
+
+- npm install
+
+## Execute  o aplicativo 
+
+- npm run dev
+
+## Abra o aplicativo no navegador:
+
+- http://localhost:3000
+
+## Desenvolvido por Larissa.
+
+
+
