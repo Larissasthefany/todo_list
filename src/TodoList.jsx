@@ -29,7 +29,6 @@ export default function TodoList() {
         localStorage.setItem('tarefas', JSON.stringify(tarefas));
     }, [tarefas]);
 
-
     const handleAdd = useCallback(() => {
         if (input.trim() !== '') {
             setTarefas([...tarefas, input]);
