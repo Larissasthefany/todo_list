@@ -36,7 +36,6 @@ git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 - http://localhost:3000
 
-## Desenvolvido por Larissa.
 
 
 
